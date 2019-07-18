@@ -1,11 +1,69 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exercise 3</title>
+  <title>planet</title>
 </head>
 <body>
-    <center>
-        <h1>Daftar Planet</h1>
-    </center>
+    <table border="1">
+        <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Rotation Period</th>
+                    <th>Orbital Period</th>
+                </tr>
+
+        </thead>
+        <tbody id="tableData"></tbody>
+
+    </table>
+
+    <form id="form1" name="form1" onsubmit="return false">
+  <label for="select1">Pilih: </label>
+  <select id="select1" name="select1">
+    <option value="jakarta">Name</option>
+    <option value="rotation_period">Rotation Period</option>
+    <option value="orbital_period">Orbital Period</option>
+  </select>
+  <input type="submit" value="Tampilkan Keterangan" onclick="tampilkan()">
+</form>
+
+    <script>
+        let result = [
+        {
+            "name": "Alderaan",
+            "rotation_period": "24",
+            "orbital_period": "364"
+        },
+        {
+            "name": "Yavin IV",
+            "rotation_period": "24",
+            "orbital_period": "4818"
+        },
+        {
+            "name": "Hoth",
+            "rotation_period": "23",
+            "orbital_period": "549"
+        }
+
+    ]
+
+        let b = '<tbody>';
+        for (i = 0;i< result.length;i++){
+            b += '<tr>';
+            b += '<td>' + result[i].name + '</td>';
+            b += '<td>' + result[i].rotation_period + '</td>';
+            b += '<td>' + result[i].orbital_period + '</td>';
+            b += '</tr>';
+
+        }
+        b += '</tbody>';
+
+        function tampilkan(){
+          
+        }
+        document.getElementById('tableData').innerHTML = b;
+    </script>
 </body>
 </html>
+
